@@ -1,0 +1,35 @@
+
+###############################
+### RNN training
+###############################
+# training
+batch_size: 64
+num_epochs: 200
+test_interval: 10
+
+learning_rate: 1e-4
+weight_decay: 0
+
+# RNN
+seq_len: 3
+
+rnn_input_size: 4         # state dim
+rnn_hidden_size: 32       
+action_size: 2
+
+###############################
+### AIRL training
+###############################
+rollouts_min_episodes: 180 #60
+
+layout_name: simple
+trainExpertPolicy_steps: 500000 #100
+trainAIRL_steps: 1800000 #20000
+
+loadExpertPolicy_path: './logs/selfplay_604rew_complexarch/expert_selfplay/rl_model_500000_steps'
+
+###############################
+### Modified Agent training (with RNN embedding & modified reward)
+###############################
+trainModExpertPolicy_steps: 100
+discriminator_loadpath: './logs/1211_00_15/airl/checkpoint_00000/reward_train.pt'

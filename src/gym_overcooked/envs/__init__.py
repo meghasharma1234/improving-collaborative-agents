@@ -1,0 +1,2 @@
+from gym_overcooked.envs.OvercookedPlay import OvercookedSelfPlayEnv
+from gym_overcooked.envs.OvercookedPlay_modified import OvercookedSelfPlayModifiedEnv
